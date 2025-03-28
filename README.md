@@ -1,4 +1,4 @@
-# subtitle_editor
+# Subtitles2Script
 A Simple Java Application to Remove Timestamps from Subtitle Files
 
 ## Overview
