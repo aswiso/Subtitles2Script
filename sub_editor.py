@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
+from tkinter.scrolledtext import ScrolledText
 
 # constants
 NIGHT_D = "#181818"
@@ -25,6 +26,10 @@ def save_file():
         save_file.write(save_text)
     tk.title(f"Subtitle Editor - {filepath}")
 
+def transform():
+    wind_text = txt_box.get("1.0", tk.END)
+
+
 root = tk.Tk()
 root.title("Subtitle Editor")
 root.rowconfigure(0, minsize=50, weight=1)
@@ -36,8 +41,9 @@ window.grid(row=0, column=0, sticky="nsew")
 window.rowconfigure(0, minsize=800, weight=1)
 window.columnconfigure(1, minsize=800, weight=1)
 
-txt_box = tk.Text(master=window, background=NIGHT_D2, foreground=NIGHT_L)
+txt_box = ScrolledText(master=window, background=NIGHT_D2, foreground=NIGHT_L)
 txt_box.grid(row=0, column=1, sticky="nsew", pady=(5, 5), padx=(0, 5))
+
 
 frm_buttons = tk.Frame(master=window, background=NIGHT_D)
 frm_buttons.grid(row=0, column=0, sticky="ns", pady=(5, 5))
