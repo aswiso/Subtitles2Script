@@ -45,8 +45,8 @@ def transform():
 
 def revert():
     try:
-        txt_box.delete("1.0", tk.END)
         with open(file=gl_filepath, mode="r", encoding="utf-8-sig") as open_file:
+            txt_box.delete("1.0", tk.END)
             input_text = open_file.read()
             txt_box.insert(tk.END, input_text)
     except Exception as e:
@@ -66,7 +66,7 @@ window.grid(row=0, column=0, sticky="nsew")
 window.rowconfigure(0, minsize=800, weight=1)
 window.columnconfigure(1, minsize=800, weight=1)
 
-txt_box = ScrolledText(master=window, background=NIGHT_D2, foreground=NIGHT_L)
+txt_box = ScrolledText(master=window, background=NIGHT_D2, foreground=NIGHT_L, undo=True)
 txt_box.grid(row=0, column=1, sticky="nsew", pady=(5, 5), padx=(0, 5))
 
 
